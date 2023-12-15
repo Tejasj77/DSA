@@ -16,6 +16,12 @@ function mergeSortedArrays(arr1, arr2) {
       mergedArray.push(arr1Item);
       i++;
       arr1Item = arr1[i];
+    } else if (arr1Item === arr2Item) {
+      mergedArray.push(arr1Item);
+      i++;
+      j++;
+      arr1Item = arr1[i];
+      arr2Item = arr2[j];
     } else {
       mergedArray.push(arr2Item);
       j++;
@@ -25,5 +31,5 @@ function mergeSortedArrays(arr1, arr2) {
   return mergedArray;
 }
 
-const result = mergeSortedArrays([0, 2, 6, 7], [0, 1, 3, 4]);
+const result = mergeSortedArrays([0, 1, 2, 3], [0, 1, 3, 4]);
 console.log({ result });
