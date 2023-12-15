@@ -12,3 +12,23 @@ else{}
 ```
 
 > We do not require "!arr1Item" because if arr1 is over first, then anyway else block will run and arr2 items will be pushed in the mergedArray.
+
+# Second commit
+
+```js
+while (arr1Item != undefined || arr2Item != undefined) {
+    if (
+      arr2Item === undefined ||
+      (arr1Item != undefined && arr1Item < arr2Item)
+    ) {}
+```
+
+> The second commit is to mainly safeguard against both array inputs starting with 0. For example : [0, 2, 6, 7], [0, 1, 3, 4]
+> In the previous code,
+
+```js
+while(arr1Item || arr2Item)
+```
+
+> was becoming false because OR operator does not work in case both inputs are 0.
+> That is why, added separate checks for undefined in the code.

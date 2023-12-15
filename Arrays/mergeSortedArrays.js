@@ -8,8 +8,11 @@ function mergeSortedArrays(arr1, arr2) {
   let i = 0;
   let j = 0;
   const mergedArray = [];
-  while (arr1Item || arr2Item) {
-    if (!arr2Item || arr1Item < arr2Item) {
+  while (arr1Item != undefined || arr2Item != undefined) {
+    if (
+      arr2Item === undefined ||
+      (arr1Item != undefined && arr1Item < arr2Item)
+    ) {
       mergedArray.push(arr1Item);
       i++;
       arr1Item = arr1[i];
@@ -22,5 +25,5 @@ function mergeSortedArrays(arr1, arr2) {
   return mergedArray;
 }
 
-const result = mergeSortedArrays([0, 2, 6, 7], [1, 3, 4]);
+const result = mergeSortedArrays([0, 2, 6, 7], [0, 1, 3, 4]);
 console.log({ result });
